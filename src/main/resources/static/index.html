@@ -32,13 +32,13 @@
 				<form>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Email</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite o seu email">
+						<input type="email" class="form-control" id="emaillogar" aria-describedby="emailHelp" placeholder="Digite o seu email">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Senha</label>
-						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Informe a sua senha">
+						<input type="password" class="form-control" id="senhalogar" placeholder="Informe a sua senha">
 					</div>
-					<button type="submit" class="btn btn-primary">Entrar</button>
+					<button type="button" onclick="logar()" class="btn btn-primary">Entrar</button>
 				</form>
 			</div>
 			<div class="col-sm-6">
@@ -59,7 +59,7 @@
 					<div class="form-group">
 						<input id="senha-confirma-cadastro" type="password" onkeyup="validarSenha()" name="nome" placeholder="Confirme a sua senha" class="form-control" id="senha2">
 					</div>
-					<button type="button" class="btn btn-primary" onclick="cadastro()">Cadastre-se</button>
+					<button class="btn btn-primary" onclick="cadastro()">Cadastre-se</button>
 				</form>
 
 			</div>

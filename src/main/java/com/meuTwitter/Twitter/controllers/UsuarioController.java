@@ -1,5 +1,7 @@
 package com.meuTwitter.Twitter.controllers;
 
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +57,9 @@ public class UsuarioController {
 				.map(usuario -> {
 					usuario.setNomeDeUsuario(usuarioRequest.getNomeDeUsuario());
 					usuario.setEmail(usuarioRequest.getEmail());
+					usuario.setTelefone(usuarioRequest.getTelefone());
 					usuario.setSenha(usuarioRequest.getSenha());
+					
 					
 					return usuarioRepository.save(usuario);
 				}).orElseThrow(()-> 
@@ -83,4 +87,12 @@ public class UsuarioController {
 				new  ResourceNotFoundException("página não encontrada cana" + usuarioId));
 	}
 	
+	@PostMapping("/usuario/logar")
+	public Usuario LoginMei(@RequestBody Map<String, String> params) {
+		 
+		String email = params.get("email");
+		String senha = params.get("senha");
+		
+		return usuarioRepository.findByEmailAndSenha(email, senha);
+	}
 }

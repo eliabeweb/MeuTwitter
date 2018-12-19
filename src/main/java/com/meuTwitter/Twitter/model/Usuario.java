@@ -21,6 +21,9 @@ public class Usuario {
 	private String senha;
 	
 	@Column
+	private String telefone;
+	
+	@Column
 	private String nomeDeUsuario;
 	@OneToMany(cascade = CascadeType.ALL,
 			orphanRemoval = true)
@@ -76,7 +79,13 @@ public class Usuario {
 		this.nomeDeUsuario = nomeDeUsuario;
 	}
 
+	public String getTelefone() {
+		return telefone;
+	}
 
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 
 	
 }

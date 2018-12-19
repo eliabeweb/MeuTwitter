@@ -9,4 +9,5 @@ import com.meuTwitter.Twitter.model.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
   Page<Usuario> findByEmail(String email, Pageable pageable);
+  public Usuario findByEmailAndSenha (String email, String senha);
 }
